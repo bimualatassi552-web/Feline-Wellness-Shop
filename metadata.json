@@ -1,0 +1,6 @@
+{
+  "name": "Feline Wellness Shop",
+  "description": "A premium feline wellness, nutrition, and subscription e-commerce platform detailing gourmet cat food with customizable options, cart subscriptions, secure checkout, and personal order history dashboards.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
