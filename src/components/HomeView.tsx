@@ -283,8 +283,8 @@ export const HomeView: React.FC<HomeViewProps> = ({
                     <span className="text-[9px] font-mono tracking-wider bg-[#3E5E4E]/10 text-[#3E5E4E] px-2 py-0.5 rounded-md uppercase">
                       MAGNETIC BUTTON INTERCEPT
                     </span>
-                    <h4 className="font-display font-bold text-lg text-stone-800">
-                      <HackerText text="Frictionless Attraction" />
+                    <h4 className="font-display font-bold text-lg text-black">
+                      <HackerText text="Frictionless Attraction" className="text-black !text-black" disabled={true} />
                     </h4>
                     <p className="text-stone-500 text-xs leading-relaxed">
                       Move your cursor slowly towards the magnetic action items below to observe fluid physical suction.
