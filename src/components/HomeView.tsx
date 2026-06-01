@@ -75,7 +75,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center p-8 sm:p-12 md:p-16 relative z-10 w-full animate-fade-in">
             {/* Left Content column */}
-            <div className="lg:col-span-7 flex flex-col items-start text-left space-y-6 order-2 lg:order-1">
+            <div className="lg:col-span-6 flex flex-col items-start text-left space-y-6 order-2 lg:order-1">
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FAF8F5]/10 text-[#F4E8C1] border border-[#FAF8F5]/10 text-xs font-mono font-bold tracking-wider uppercase">
                 <Sparkles size={12} className="text-gold" /> VET-FORMULATED BIOLOGICAL DIETS
               </span>
@@ -117,8 +117,8 @@ export const HomeView: React.FC<HomeViewProps> = ({
             </div>
 
             {/* Visual block showing high resolution cats / food can (Ordered to top on mobile via order-1) */}
-            <div className="order-1 lg:order-2 lg:col-span-5 flex justify-center lg:justify-end relative h-72 lg:h-[420px] w-full">
-              <div className="w-full h-full max-w-sm relative">
+            <div className="order-1 lg:order-2 lg:col-span-6 flex justify-center lg:justify-end relative h-80 lg:h-[480px] w-full">
+              <div className="w-full h-full max-w-md relative hover:scale-[1.03] transition-transform duration-500">
                 <video
                   src="https://ik.imagekit.io/ihi7o5b1q/5%E6%9C%8827%E6%97%A5(1).mp4"
                   autoPlay
@@ -126,7 +126,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                   muted
                   playsInline
                   controls={false}
-                  className="w-full h-full object-cover rounded-3xl relative z-10 shadow-lg border border-white/10 animate-fade-in"
+                  className="w-full h-full object-cover rounded-3xl relative z-10 shadow-xl border border-white/10 animate-fade-in"
                 />
                 
                 {/* Floating highlight review bubble */}
@@ -209,6 +209,27 @@ export const HomeView: React.FC<HomeViewProps> = ({
             <span className="text-[10px] font-mono font-bold text-wine tracking-wider uppercase group-hover:translate-x-1 transition-transform duration-300">Gut-Microbiome Protected &rarr;</span>
           </div>
         </div>
+      </section>
+
+      {/* 3. Bestselling Products Carousel Row */}
+      <section id="featured-carousel" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 text-left">
+          <div className="space-y-2">
+            <span className="text-xs font-mono font-bold tracking-widest text-[#3E5E4E] uppercase">VET-DIAGNOSED bestseller RECIPES</span>
+            <h2 className="font-display font-bold text-3xl text-wine tracking-tight">Active Dietary Formulations</h2>
+          </div>
+          <button 
+            onClick={() => setView('catalogue')}
+            className="text-xs font-bold uppercase tracking-wider text-wine hover:text-gold flex items-center gap-1.5 transition-colors font-sans hover:translate-x-1 duration-200 cursor-pointer"
+          >
+            See All Formulation Packs &rarr;
+          </button>
+        </div>
+
+        <RotatingProductWheel
+          onViewDetails={handleProductClick}
+          onAddToCart={handleQuickAdd}
+        />
       </section>
 
       {/* 2.5 Dynamic Interactive Mouse Effects Laboratory */}
@@ -319,27 +340,6 @@ export const HomeView: React.FC<HomeViewProps> = ({
             </div>
           </div>
         </div>
-      </section>
-
-      {/* 3. Bestselling Products Carousel Row */}
-      <section id="featured-carousel" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 text-left">
-          <div className="space-y-2">
-            <span className="text-xs font-mono font-bold tracking-widest text-[#3E5E4E] uppercase">VET-DIAGNOSED bestseller RECIPES</span>
-            <h2 className="font-display font-bold text-3xl text-wine tracking-tight">Active Dietary Formulations</h2>
-          </div>
-          <button 
-            onClick={() => setView('catalogue')}
-            className="text-xs font-bold uppercase tracking-wider text-wine hover:text-gold flex items-center gap-1.5 transition-colors font-sans hover:translate-x-1 duration-200 cursor-pointer"
-          >
-            See All Formulation Packs &rarr;
-          </button>
-        </div>
-
-        <RotatingProductWheel
-          onViewDetails={handleProductClick}
-          onAddToCart={handleQuickAdd}
-        />
       </section>
 
       {/* 4. Interactive Callout Banner */}
