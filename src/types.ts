@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-export type ViewType = 'home' | 'catalogue' | 'detail' | 'cart' | 'checkout' | 'profile' | 'proteins-info' | 'simmer-info' | 'prebiotics-info';
+export type ViewType = 'home' | 'catalogue' | 'detail' | 'cart' | 'checkout' | 'profile' | 'proteins-info' | 'simmer-info' | 'prebiotics-info' | 'immune-booster-info' | 'premium-salmon-info' | 'satiety-fiber-info';
 
 export type PurchaseType = 'one-time' | 'subscription';
 

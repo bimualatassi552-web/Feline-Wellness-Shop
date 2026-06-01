@@ -10,6 +10,7 @@ interface GlowCardProps {
   className?: string;
   glowColor?: string; // e.g., "rgba(196, 154, 69, 0.15)"
   borderColor?: string; // Hover border color trace
+  onClick?: () => void;
 }
 
 export const GlowCard: React.FC<GlowCardProps> = ({
@@ -17,6 +18,7 @@ export const GlowCard: React.FC<GlowCardProps> = ({
   className = "",
   glowColor = "rgba(196, 154, 69, 0.18)",
   borderColor = "rgba(196, 154, 69, 0.4)",
+  onClick,
 }) => {
   const [coords, setCoords] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
@@ -30,6 +32,7 @@ export const GlowCard: React.FC<GlowCardProps> = ({
 
   return (
     <div
+      onClick={onClick}
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}

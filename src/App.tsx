@@ -18,6 +18,9 @@ import { BlendCursor } from './components/BlendCursor';
 import { ProteinPillarView } from './components/ProteinPillarView';
 import { SimmerPillarView } from './components/SimmerPillarView';
 import { PrebioticsPillarView } from './components/PrebioticsPillarView';
+import { ImmuneBoosterView } from './components/ImmuneBoosterView';
+import { PremiumSalmonView } from './components/PremiumSalmonView';
+import { SatietyFiberView } from './components/SatietyFiberView';
 
 export default function App() {
   // Page routing
@@ -223,6 +226,27 @@ export default function App() {
         )}
         {currentView === 'prebiotics-info' && (
           <PrebioticsPillarView
+            setView={setView}
+            setSelectedProduct={setSelectedProduct}
+            onAddToCart={handleQuickAddToCart}
+          />
+        )}
+        {currentView === 'immune-booster-info' && (
+          <ImmuneBoosterView
+            setView={setView}
+            setSelectedProduct={setSelectedProduct}
+            onAddToCart={handleQuickAddToCart}
+          />
+        )}
+        {currentView === 'premium-salmon-info' && (
+          <PremiumSalmonView
+            setView={setView}
+            setSelectedProduct={setSelectedProduct}
+            onAddToCart={handleQuickAddToCart}
+          />
+        )}
+        {currentView === 'satiety-fiber-info' && (
+          <SatietyFiberView
             setView={setView}
             setSelectedProduct={setSelectedProduct}
             onAddToCart={handleQuickAddToCart}

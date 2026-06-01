@@ -231,7 +231,11 @@ export const HomeView: React.FC<HomeViewProps> = ({
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 
                 {/* Glow Card A */}
-                <GlowCard className="bg-stone-950 text-[#FAF8F5] border-white/5" glowColor="rgba(196, 154, 69, 0.22)">
+                <GlowCard 
+                  onClick={() => setView('immune-booster-info')}
+                  className="bg-stone-950 text-[#FAF8F5] border-white/5 cursor-pointer hover:scale-[1.02] transition-transform duration-300" 
+                  glowColor="rgba(196, 154, 69, 0.22)"
+                >
                   <div className="space-y-4 text-left">
                     <span className="text-[9px] font-mono tracking-wider bg-gold/10 text-gold px-2 py-0.5 rounded-md uppercase">
                       DIETARY INTELLIGENCE
@@ -243,13 +247,17 @@ export const HomeView: React.FC<HomeViewProps> = ({
                       This element is wrapped inside a <code>GlowCard</code>. Move your mouse inside to trace active radial light emission gradient.
                     </p>
                     <div className="pt-2 flex items-center gap-1.5 text-xs text-gold font-mono uppercase">
-                      <span>Live Coordinate Mapping</span> &rarr;
+                      <span>Live Coordinate Mapping &rarr;</span>
                     </div>
                   </div>
                 </GlowCard>
 
                 {/* Glow Card B */}
-                <GlowCard className="bg-[#FAF8F5] text-stone-800" glowColor="rgba(62, 94, 78, 0.18)">
+                <GlowCard 
+                  onClick={() => setView('premium-salmon-info')}
+                  className="bg-[#FAF8F5] text-stone-800 cursor-pointer hover:scale-[1.02] transition-transform duration-300" 
+                  glowColor="rgba(62, 94, 78, 0.18)"
+                >
                   <div className="space-y-4 text-left">
                     <span className="text-[9px] font-mono tracking-wider bg-[#3E5E4E]/10 text-[#3E5E4E] px-2 py-0.5 rounded-md uppercase">
                       MAGNETIC BUTTON INTERCEPT
@@ -261,7 +269,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                       Move your cursor slowly towards the magnetic action items below to observe fluid physical suction.
                     </p>
                     <div className="pt-2 flex items-center gap-1.5 text-xs text-[#3E5E4E] font-mono uppercase">
-                      <span>Proximity Range: 90px</span> &deg;
+                      <span>Proximity Range: 90px &deg;</span>
                     </div>
                   </div>
                 </GlowCard>
@@ -276,19 +284,28 @@ export const HomeView: React.FC<HomeViewProps> = ({
                 
                 <div className="flex flex-wrap gap-4 items-center">
                   <MagneticContainer>
-                    <button className="bg-[#3E5E4E] hover:bg-stone-900 text-[#FAF8F5] font-bold px-5 py-3 rounded-full text-xs shadow-md transition-all cursor-pointer">
+                    <button 
+                      onClick={() => setView('immune-booster-info')}
+                      className="bg-[#3E5E4E] hover:bg-stone-900 text-[#FAF8F5] font-bold px-5 py-3 rounded-full text-xs shadow-md transition-all cursor-pointer"
+                    >
                       🟢 Immune Booster
                     </button>
                   </MagneticContainer>
 
                   <MagneticContainer>
-                    <button className="bg-gold text-wine hover:bg-[#FAF8F5] hover:text-wine font-extrabold px-5 py-3 rounded-full text-xs shadow-md transition-all cursor-pointer">
+                    <button 
+                      onClick={() => setView('premium-salmon-info')}
+                      className="bg-gold text-wine hover:bg-[#FAF8F5] hover:text-wine font-extrabold px-5 py-3 rounded-full text-xs shadow-md transition-all cursor-pointer"
+                    >
                       🌟 Premium Salmon
                     </button>
                   </MagneticContainer>
 
                   <MagneticContainer>
-                    <button className="bg-transparent hover:bg-stone-100 border border-stone-300 text-stone-800 font-semibold px-5 py-3 rounded-full text-xs transition-all cursor-pointer">
+                    <button 
+                      onClick={() => setView('satiety-fiber-info')}
+                      className="bg-transparent hover:bg-stone-100 border border-stone-300 text-stone-800 font-semibold px-5 py-3 rounded-full text-xs transition-all cursor-pointer"
+                    >
                       💡 Satiety Fiber
                     </button>
                   </MagneticContainer>
