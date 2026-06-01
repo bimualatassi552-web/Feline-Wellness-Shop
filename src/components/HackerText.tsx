@@ -10,6 +10,7 @@ interface HackerTextProps {
   className?: string;
   speed?: number; // millisecond intervals per update cycle
   triggerOnHover?: boolean;
+  disabled?: boolean;
 }
 
 const GLYPHS = "日ハミヒーウシナルサトヌネハキマケケム☆✧☢⚛⚡☣⚙◈✦☠☯☣";
@@ -19,6 +20,7 @@ export const HackerText: React.FC<HackerTextProps> = ({
   className = "",
   speed = 30,
   triggerOnHover = true,
+  disabled = false,
 }) => {
   const [displayText, setDisplayText] = useState<string>(text);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
@@ -31,6 +33,7 @@ export const HackerText: React.FC<HackerTextProps> = ({
   }, [text]);
 
   const startScramble = () => {
+    if (disabled) return;
     if (isDecodingRef.current) return;
     isDecodingRef.current = true;
     iterationsRef.current = 0;
@@ -73,6 +76,10 @@ export const HackerText: React.FC<HackerTextProps> = ({
   };
 
   useEffect(() => {
+    if (disabled) {
+      setDisplayText(text);
+      return;
+    }
     // Optional automatic initial decode effect on mount
     startScramble();
     
@@ -81,12 +88,12 @@ export const HackerText: React.FC<HackerTextProps> = ({
         clearInterval(intervalRef.current);
       }
     };
-  }, [text]);
+  }, [text, disabled]);
 
   return (
     <span
       className={`inline-block font-mono select-none cursor-[#c49a45] ${className}`}
-      onMouseEnter={triggerOnHover ? startScramble : undefined}
+      onMouseEnter={(!disabled && triggerOnHover) ? startScramble : undefined}
     >
       {displayText}
     </span>

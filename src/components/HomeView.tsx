@@ -254,17 +254,17 @@ export const HomeView: React.FC<HomeViewProps> = ({
                 {/* Glow Card A */}
                 <GlowCard 
                   onClick={() => setView('immune-booster-info')}
-                  className="bg-stone-950 text-[#FAF8F5] border-white/5 cursor-pointer hover:scale-[1.02] transition-transform duration-300" 
-                  glowColor="rgba(196, 154, 69, 0.22)"
+                  className="bg-[#FAF8F5] text-stone-800 cursor-pointer hover:scale-[1.02] transition-transform duration-300" 
+                  glowColor="rgba(196, 154, 69, 0.18)"
                 >
                   <div className="space-y-4 text-left">
                     <span className="text-[9px] font-mono tracking-wider bg-gold/10 text-gold px-2 py-0.5 rounded-md uppercase">
                       DIETARY INTELLIGENCE
                     </span>
-                    <h4 className="font-display font-bold text-lg text-white">
-                      <HackerText text="Cellular Absorption" />
+                    <h4 className="font-display font-bold text-lg text-black">
+                      <HackerText text="Cellular Absorption" className="text-black !text-black" disabled={true} />
                     </h4>
-                    <p className="text-stone-300 text-xs leading-relaxed">
+                    <p className="text-stone-500 text-xs leading-relaxed">
                       This element is wrapped inside a <code>GlowCard</code>. Move your mouse inside to trace active radial light emission gradient.
                     </p>
                     <div className="pt-2 flex items-center gap-1.5 text-xs text-gold font-mono uppercase">
